@@ -1,0 +1,88 @@
+#include <stdio.h>
+
+int main() {
+ 
+int valor;
+int *p1;
+float temp;
+float *p2;
+char aux;
+char *nome = "Ponteiros";
+char *p3;
+int idade;
+int vetor[3];
+int *p4;
+int *p5;
+ 
+/* (a) */
+valor = 10;  // a variavél 'valor' recebe 10
+p1 = &valor; // o ponteiro p1 recebe o endereço da var. 'valor'
+*p1 = 20;    // 20 é adicionado ao espaço de memória endereçado por p1
+             // o espaço da memória que armazena o conteúdo de 'valor'
+             // Logo o valor de 'valor' é modificado
+printf("%d \n", valor); //Resp.: 20
+ 
+/* (b) */
+temp = 26.5; // a variavel 'temp' recebe 26.5
+p2 = &temp;  // o ponteiro p2 recebe o endereço da var. 'temp'
+*p2 = 29.0;  // 29.0 é adicionado ao espaço de memória endereçado por p2
+             // o espaço da memória que armazena o conteúdo de 'valor'
+             // Logo o valor de 'valor' é modificado
+printf("%.1f \n", temp); //Resp.: 29.0
+//'.1f' = mostra apenas uma casa decimal após a vígula  
+
+/* (c) */
+p3 = &nome[0];        // o ponteiro 'p3' recebe o endereço da 1ª posição do vetor 'nome[0]'
+aux = *p3;            // 'aux' recebe o conteúdo do ponteiro 'p3'
+printf("%c \n", aux); //Resp.: P
+
+/* (d) */
+p3 = &nome[4];        // o ponteiro 'p3' recebe o endereço da 5ª posição do vetor 'nome[4]'
+aux = *p3;            // 'aux' recebe o conteúdo do ponteiro 'p3'
+printf("%c \n", aux); //Resp.: e
+
+/* (e) */
+p3 = nome;
+printf("%c \n", *p3); //Resp.: P
+
+/* (f) */
+p3 = p3 + 4;
+printf("%c \n", *p3); //Resp.: e
+
+/* (g) */
+p3--;
+printf("%c \n", *p3); //Resp.: t
+
+/* (h) */
+vetor[0] = 31;
+vetor[1] = 45;
+vetor[2] = 27;
+p4 = vetor;
+idade = *p4;
+printf("%d \n", idade); //Resp.: 31
+
+/* (i) */
+p5 = p4 + 1;
+idade = *p5;
+printf("%d \n", idade); //Resp.: 45
+
+/* (j) */
+p4 = p5 + 1;
+idade = *p4;
+printf("%d \n", idade); //Resp.: 27
+
+/* (l) */
+p4 = p4 - 2;
+idade = *p4;
+printf("%d \n", idade); //Resp.: 31
+ 
+/* (m) */
+p5 = &vetor[2] - 1;
+printf("%d \n", *p5); //Resp.: 45
+ 
+/* (n) */
+p5++;
+printf("%d \n", *p5); //Resp.: 27
+ 
+return(0);
+}

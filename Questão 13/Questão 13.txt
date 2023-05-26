@@ -1,0 +1,23 @@
+O que é um ponteiro para uma função? 
+O uso de ponteiros para funções serve principalmente para definir, qual função será executada, sem a necessidade de escrever o nome da função, fazendo o ponteiro apontar para a função desejada, assim como nos ponteiros para variáveis.
+
+int Menor(int x, int y){
+    	    if(x<y){
+       	        return x;
+   	    }
+   	    else if(y>x){
+                return y;
+    	    }
+    	    else{
+	        return 0;
+   	    }
+	}
+	int main(){
+    	   int (*ponteiro)(int, int);
+    	   int x;
+
+    	   ponteiro=Menor;
+
+    	   x = ponteiro(12, 24);
+    	   printf("%d \n\n", x);
+	}

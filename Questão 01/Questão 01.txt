@@ -1,2 +1,4 @@
-testecommit
-
+//Resposta: Com o uso de ponteiros os engenheiros, principalmente os da área da computação, 
+irão poder otimizar seus projetos com criação de algoritmos mais otimizados, pois
+com essa implementação, eles tem acesso aos endereços de memória, podendo assim
+organizar melhor a distriuição dos blocos, tornando o programa mais rápido.

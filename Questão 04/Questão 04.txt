@@ -1,0 +1,4 @@
+//As seguintes expressões de atribuição são ilegais:
+p = i; 		//Mas o programa ainda será compilado.
+i = (*&)j;	
+q = *p;		//Mas o programa ainda será compilado.
