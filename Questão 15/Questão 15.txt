@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef int TipoFuncao();
+
+int compare(const void *x, const void *y); // prótotipo da função de comparação que retorna valores de acordo com as condições feitas
+
+int main() // função principal
+{
+    TipoFuncao *functionPoint = compare;
+    float *ponteiro;                       // declarei o conteiro para float "ponteiro"
+    int t_p;                               // tamanho do vetor declarado anteriormente
+    printf("qual o tamanho do vetor? \n"); // pedir para o usuário dar o tamnho do vetor
+    scanf("%d", &t_p);                     // o usuário insire o tamanho do vetor
+
+    ponteiro = (float *)malloc(t_p * sizeof(float)); // função malloc para alocar bloco de memória para o vetor
+
+    printf("preencha o vetor \n"); // pedir para o usuário preencher o vetor
+    for (int i = 0; i < t_p; i++)  // estrutura de repetição usada para preencher todo o vetor
+    {
+        scanf("%f", &ponteiro[i]); // inserindo valores ao vetor
+    }
+
+    qsort(ponteiro, t_p, sizeof(float), *functionPoint); // função qsort para ordenar, de forma crescente, o vetor
+    for (int l = 0; l < t_p; l++)                        // estrutura de repetição para mostrar o vetor de forma já ordenada
+    {
+        printf("%f\n", ponteiro[l]); // mostrar os valores do vetor de forma ordenada
+    }
+
+    free(ponteiro);
+    ponteiro = NULL;
+
+    return 0;
+}
+
+int compare(const void *x, const void *y) // função comparação
+{
+    if ((float *)x < ((float *)y)) // estrutura condicional
+    {
+        return 1; // o y virá primeiro, ordem decrescente
+    }
+    else if ((float *)x == ((float *)y))
+    {
+        return 0;
+    }
+    else
+    {
+        return -1; // o x virá primeiro que o y
+    }
+}
